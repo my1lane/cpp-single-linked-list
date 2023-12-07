@@ -228,16 +228,16 @@ private:
     size_t size_ = 0;
 
     template<typename T> 
-void Assign(T& elem) { 
-    auto it = elem.begin();
-    auto head_ = it;
+    void Assign(T& elem) { 
+        auto it = elem.begin();
+        auto head_ = it;
 
-    while (it != elem.end()) { 
-        elem.InsertAfter(head_, *it); 
-        ++it;
-        ++head_;
-    } 
-}
+        while (it != elem.end()) { 
+            elem.InsertAfter(head_, *it); 
+            ++it;
+            ++head_;
+        } 
+    }
 
 
 
