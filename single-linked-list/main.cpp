@@ -227,20 +227,18 @@ private:
     Node head_;
     size_t size_ = 0;
 
-    template<typename T>
-    void Assign(T& elem) {
-        SingleLinkedList elem_copy;
-        SingleLinkedList tmp_reverse;
+    template<typename T> 
+void Assign(T& elem) { 
+    auto it = elem.begin();
+    auto head_ = it;
 
-        for (auto it = elem.begin(); it != elem.end(); ++it) {
-            tmp_reverse.PushFront(*it);
-        }
-        for (auto it = tmp_reverse.begin(); it != tmp_reverse.end(); ++it) {
-            elem_copy.PushFront(*it);
-        }
+    while (it != elem.end()) { 
+        elem.InsertAfter(head_, *it); 
+        ++it;
+        ++head_;
+    } 
+}
 
-        swap(elem_copy);
-    }
 
 
 };
